@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.henrist</groupId>
+  <artifactId>snyk-pom-dependency-management</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>snyk-dependency-management</name>
+  <url>http://maven.apache.org</url>
+
+  <dependencyManagement>
+    <dependencies>
+      <!--
+      This overrides the transitive dependency of com.amazonaws:aws-java-sdk-core:1.11.647,
+      but is not detected by Snyk.
+      -->
+      <dependency>
+        <groupId>com.fasterxml.jackson</groupId>
+        <artifactId>jackson-bom</artifactId>
+        <version>2.10.0</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <!--
+    This depends on com.fasterxml.jackson.core:jackson-databind:2.6.7.2 which
+    in Snyk is reported to have this vulnerability:
+    https://app.snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-469676
+    -->
+    <dependency>
+        <groupId>com.amazonaws</groupId>
+        <artifactId>aws-java-sdk-core</artifactId>
+        <version>1.11.647</version>
+    </dependency>
+  </dependencies>
+</project>
