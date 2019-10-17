@@ -6,21 +6,7 @@ This repository is used to show the issue with Snyk
 automated tests not reading version overrides through
 `<dependencyManagement>` in `pom.xml`.
 
-## Workaround: Don't use BOM
-
-Official Snyk support reponse (my ticket #2007) as of 2019-10-09:
-
-> Thanks for putting this scenario to our attention! Looks like
-> this is a missing feature that we do not have support for BOMs in
-> dependencyManagement via SCM tests. I have added a ticket to our
-> backlog for this.
->
-> In the meanwhile, you will need to directly manage the dependencies
-> in order to see the expected result when importing your project from SCM.
-
 ## Output from `mvn dependency:tree`
-
-(This is from before the workaround was applied.)
 
 As can be seen from this, only Jackson 2.10.0 is included.
 However, Snyk does not detect this, and reports the application
@@ -56,8 +42,6 @@ wrongly vulnerable as can be seen in the Snyk report.
 
 ## Output from Snyk CLI
 
-(This is from before the workaround was applied.)
-
 It appears the Snyk CLI reports this correctly.
 
 ```bash
@@ -88,7 +72,5 @@ net.henrist:snyk-pom-dependency-management @ 1.0-SNAPSHOT
 ```
 
 ## Image from Snyk UI
-
-(This is from before the workaround was applied.)
 
 ![Snyk UI](snyk-ui-dependency-tree.png)
