@@ -6,6 +6,27 @@ This repository is used to show the issue with Snyk
 automated tests not reading version overrides through
 `<dependencyManagement>` in `pom.xml`.
 
+## Workaround: Don't use BOM
+
+Official Snyk support reponse (my ticket #2007) as of 2019-10-17:
+
+> Thanks for putting this scenario to our attention! Looks like
+> this is a missing feature that we do not have support for BOMs in
+> dependencyManagement via SCM tests. I have added a ticket to our
+> backlog for this.
+>
+> In the meanwhile, you will need to directly manage the dependencies
+> in order to see the expected result when importing your project from SCM.
+
+What this means is that we can still use `<dependencyManagement>`,
+only not by using BOM (Bill Of Materials).
+
+The workaround can be seen here:
+https://github.com/henrist/snyk-pom-dependency-management
+
+This repo is kept with the original code so that we can
+verify when BOM support is available.
+
 ## Output from `mvn dependency:tree`
 
 As can be seen from this, only Jackson 2.10.0 is included.
