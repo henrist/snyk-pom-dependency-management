@@ -18,9 +18,16 @@ Official Snyk support reponse (my ticket #2007) as of 2019-10-17:
 > In the meanwhile, you will need to directly manage the dependencies
 > in order to see the expected result when importing your project from SCM.
 
-## Output from `mvn dependency:tree`
+What this means is that we can still use `<dependencyManagement>`,
+only not by using BOM (Bill Of Materials).
 
-(This is from before the workaround was applied.)
+The workaround can be seen here:
+https://github.com/henrist/snyk-pom-dependency-management
+
+This repo is kept with the original code so that we can
+verify when BOM support is available.
+
+## Output from `mvn dependency:tree`
 
 As can be seen from this, only Jackson 2.10.0 is included.
 However, Snyk does not detect this, and reports the application
@@ -56,8 +63,6 @@ wrongly vulnerable as can be seen in the Snyk report.
 
 ## Output from Snyk CLI
 
-(This is from before the workaround was applied.)
-
 It appears the Snyk CLI reports this correctly.
 
 ```bash
@@ -88,7 +93,5 @@ net.henrist:snyk-pom-dependency-management @ 1.0-SNAPSHOT
 ```
 
 ## Image from Snyk UI
-
-(This is from before the workaround was applied.)
 
 ![Snyk UI](snyk-ui-dependency-tree.png)

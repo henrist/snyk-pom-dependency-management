@@ -13,32 +13,13 @@
       <!--
       This overrides the transitive dependency of com.amazonaws:aws-java-sdk-core:1.11.647,
       but is not detected by Snyk.
-
-      Commented out to use the workaround below instead. See README.
       -->
-      <!--
       <dependency>
         <groupId>com.fasterxml.jackson</groupId>
         <artifactId>jackson-bom</artifactId>
         <version>2.10.0</version>
         <scope>import</scope>
         <type>pom</type>
-      </dependency>
-      -->
-
-      <!--
-      Workaround provided by Snyk support:
-      Add the dependency directly (but still in dependencyManagment).
-      -->
-      <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-databind</artifactId>
-        <version>2.10.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.fasterxml.jackson.dataformat</groupId>
-        <artifactId>jackson-dataformat-cbor</artifactId>
-        <version>2.10.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
