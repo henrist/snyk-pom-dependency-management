@@ -22,7 +22,7 @@ What this means is that we can still use `<dependencyManagement>`,
 only not by using BOM (Bill Of Materials).
 
 The workaround can be seen here:
-https://github.com/henrist/snyk-pom-dependency-management
+https://github.com/henrist/snyk-pom-dependency-management-workaround
 
 This repo is kept with the original code so that we can
 verify when BOM support is available.
