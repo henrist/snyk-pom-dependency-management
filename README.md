@@ -8,7 +8,7 @@ automated tests not reading version overrides through
 
 ## Workaround: Don't use BOM
 
-Official Snyk support reponse (my ticket #2007) as of 2019-10-17:
+Official Snyk support reponse (my ticket #2007) as of 2019-10-09:
 
 > Thanks for putting this scenario to our attention! Looks like
 > this is a missing feature that we do not have support for BOMs in
