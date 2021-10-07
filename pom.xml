@@ -33,7 +33,7 @@
     <dependency>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-java-sdk-core</artifactId>
-        <version>1.11.647</version>
+        <version>1.12.82</version>
     </dependency>
   </dependencies>
 </project>
